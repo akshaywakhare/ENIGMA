@@ -1,0 +1,19 @@
+{
+  "name": "alphabet-encoding",
+  "version": "1.0.0",
+  "description": "Web Development Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akshay Wakhare",
+  "license": "ISC",
+  "homepage": " https://github.com/akshaywakhare/ENIGMA#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.9",
+    "socket.io": "^4.1.3"
+  }
+}
