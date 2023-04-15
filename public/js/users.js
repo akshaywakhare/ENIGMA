@@ -22,7 +22,7 @@ console.log("Name:", username, "\nRoom:", roomname);
 
 // check if username and roomcode is valid
 if (username === '' || username.length > 20 || !checkCodeSyntax(roomname)) {
-	window.location.assign('http://localhost:3000/invalid');
+	window.location.assign('/invalid');
 }
 
 // send current user details to server
@@ -53,12 +53,10 @@ chatForm.addEventListener('submit', (e) => {
 	// fetches the message and removes spaces at the end
 	let msg = e.target.elements.msg.value.trim();
 	if (!msg) { return false; }
-	console.log("Message sent:", msg);
+	console.log("Message sent");
 
-	let key = createKey();
-	console.log("Key:", key);
-	let encryptedMessage = encrypt(msg, key);
-	console.log("Encrypted Message:", encryptedMessage);
+	let key = createKey(); 
+	let encryptedMessage = encrypt(msg, key); 
 	let keyMessage = key + encryptedMessage;
 
 	// emit message to server
@@ -75,8 +73,7 @@ function outputMessage(message) {
 		let key = message.text.substring(0, PASSCODE_LENGTH);
 		let encryptedMessage = message.text.substring(PASSCODE_LENGTH);
 		let decryptedMessage = decrypt(encryptedMessage, key);
-		message.text = decryptedMessage;
-		console.log("Decrypted Message:", message.text);
+		message.text = decryptedMessage; 
 	}
 
 	// create a div for the message
@@ -126,7 +123,7 @@ function outputUsers(users) {
 // prompt the user before leaving chat room
 document.getElementById('leave-btn').addEventListener('click', () => {
   const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
-  if (leaveRoom) { window.location.assign('http://localhost:3000/'); }
+  if (leaveRoom) { window.location.assign('/'); }
 });
 
 // function to generate a random passphrase

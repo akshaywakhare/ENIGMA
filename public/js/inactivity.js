@@ -7,7 +7,7 @@ function idleTimer() {
     window.onkeypress = resetTimer;  // catches keyboard actions
 
     function logout() {
-        window.location.assign('http://localhost:3000');
+        window.location.assign('/');
         alert('You were removed due to inactivity');
     }
 

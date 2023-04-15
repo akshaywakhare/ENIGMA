@@ -19,7 +19,7 @@ const server = app.listen(3000, () => {
 
 // registering view engine
 app.set('view engine', 'ejs');
-app.set('views', 'public/views');
+app.set('views', './public/views');
 
 // set static folder
 app.use(express.static(__dirname + '/public'));
@@ -48,8 +48,7 @@ io.on("connection", socket => {
 
     // listen for messages from users
     socket.on('chatMessage', msg => {
-        const user = getCurrentUser(socket.id);
-        // console.log(msg);
+        const user = getCurrentUser(socket.id); 
         io.to(user.room).emit('message', formatMessage(user.username, msg));
     });
 

@@ -1,0 +1,22 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: enigma  
+  annotations:
+    version: "v2"
+    description: "End-to-End Encrypted Anonymous Web Chat application"
+spec:
+  components:
+    - name: chat-server   
+      type: webservice
+      properties:
+        image: docker.io/akshay398/enigma:v4
+        ports:
+        - port: 3000  
+          expose: true
+      traits:
+      - type: napptive-ingress        
+        properties:
+          name: nginx-ingress  
+          port: 3000  
+          path: /

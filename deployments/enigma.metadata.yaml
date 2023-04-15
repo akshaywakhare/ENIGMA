@@ -1,0 +1,13 @@
+
+apiVersion: core.napptive.com/v1alpha1
+kind: ApplicationMetadata
+name: "enigma"
+version: "v2"
+description: "End-to-End Encrypted Anonymous Web Chat application"
+keywords:
+  - "chat"
+  - "Encrypted"
+  - "Anonymous" 
+license: "MIT"
+url: "https://github.com/akshaywakhare/ENIGMA" 
+doc: "https://github.com/akshaywakhare/ENIGMA/blob/main/README.md"  

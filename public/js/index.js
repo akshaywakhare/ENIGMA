@@ -49,7 +49,7 @@ socket.on('checkCodeResponse', response => {
 	if (response === 1) {
 		valid = response;
 		// if response is ok, continue to chat page
-		window.location.assign('http://localhost:3000/chat?' + 'username=' + username.value + '&room-name=' + room_name.value);
+		window.location.assign('/chat?' + 'username=' + username.value + '&room-name=' + room_name.value);
 	} else if(response === 2){
 		// room is full
 			alert('Room is full!');
@@ -68,5 +68,5 @@ socket.on('checkCodeResponse', response => {
 // receive new code from server
 socket.on('newCodeResponse', code => {
 	// redirect to chat page with given username and roomname
-	window.location.assign('http://localhost:3000/chat?' + 'username=' + username.value + '&room-name=' + code);
+	window.location.assign('chat?' + 'username=' + username.value + '&room-name=' + code);
 });
